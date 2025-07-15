@@ -1,13 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-    <!-- This is a replit script which adds a banner on the top of the page when opened in development mode outside the replit environment -->
-    <script type="text/javascript" src="https://replit.com/public/js/replit-dev-banner.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Job Risk Checker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>Will AI Replace Your Job?</h1>
+    <p>Enter your job title to check its AI risk score and get career advice.</p>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <form id="assessment-form" class="assessment-form">
+        <div class="form-group">
+          <label for="job-input" class="form-label">Your Job Title</label>
+          <input id="job-input" class="form-input" type="text" placeholder="e.g. Accountant" />
+        </div>
+        <button id="submit-btn" class="btn btn-primary" type="submit">Analyze Job Risk</button>
+      </form>
+
+      <div id="loading" class="loading">
+        <div class="loading-spinner"></div>
+        <p>Analyzing your job risk...</p>
+      </div>
+
+      <div id="error-message" class="message error-message"></div>
+      <div id="success-message" class="message success-message"></div>
+
+      <div id="assessment-results" class="assessment-results" style="display: none;"></div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content container">
+      <div class="footer-section">
+        <h3>About</h3>
+        <p>This free tool helps you estimate the risk of your job being replaced by AI — and shows you what to do next.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 AI Job Risk Checker. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
 </html>
